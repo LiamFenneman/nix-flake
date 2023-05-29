@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 
 {
-    home.packages = with pkgs; [
-        chromium
+    imports = [
+        ./chromium
     ];
+
+    home.packages = with pkgs; [];
 }
