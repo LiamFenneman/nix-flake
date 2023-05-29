@@ -4,6 +4,7 @@
     imports = [
         ./kitty
         ./neovim
+        ./shell
         ./tmux
     ];
 

@@ -11,9 +11,6 @@
         prefix = "C-a";
         terminal = "screen-256color";
         extraConfig = ''
-            unbind r
-            bind r source-file ~/.tmux.conf
-
             setw -g xterm-keys on
 
             bind-key h select-pane -L

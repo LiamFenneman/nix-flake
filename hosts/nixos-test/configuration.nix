@@ -42,6 +42,7 @@ in
         isNormalUser = true;
         description = "Liam";
         extraGroups = [ "networkmanager" "wheel" ];
+        shell = pkgs.zsh;
     };
 
     nixpkgs.config.allowUnfree = true;
@@ -51,6 +52,8 @@ in
         vim
         wget
     ];
+
+    programs.zsh.enable = true;
 
     services.openssh = {
         enable = true;

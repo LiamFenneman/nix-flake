@@ -15,5 +15,6 @@
             enable_audio_bell = false;
             listen_on = "unix:/tmp/kitty";
         };
+        shellIntegration.enableZshIntegration = true;
     };
 }
