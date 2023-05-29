@@ -3,6 +3,7 @@
 {
     imports = [
         ./neovim
+        ./tmux
     ];
 
     home.packages = with pkgs; [
@@ -10,13 +11,6 @@
         nodejs
         # zig
     ];
-
-    programs.tmux = {
-        enable = true;
-        baseIndex = 1;
-        clock24 = true;
-        mouse = true;
-    };
 
     programs.git = {
         enable = true;
