@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./kitty
         ./neovim
         ./tmux
     ];
@@ -16,10 +17,5 @@
         enable = true;
         userName = "LiamFenneman";
         userEmail = "liamfennemanbusiness@gmail.com";
-    };
-
-    programs.kitty = {
-        enable = true;
-        theme = "Tokyo Night";
     };
 }
