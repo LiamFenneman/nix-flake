@@ -53,6 +53,10 @@ in
         wget
     ];
 
+    fonts.fonts = with pkgs; [
+        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    ];
+
     programs.zsh.enable = true;
 
     services.openssh = {
