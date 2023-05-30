@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./git
         ./kitty
         ./neovim
         ./shell
@@ -13,10 +14,4 @@
         nodejs
         # zig
     ];
-
-    programs.git = {
-        enable = true;
-        userName = "LiamFenneman";
-        userEmail = "liamfennemanbusiness@gmail.com";
-    };
 }
