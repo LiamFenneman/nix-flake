@@ -8,6 +8,7 @@
         htop
         neofetch
         p7zip
+        pciutils
         ripgrep
         tree
         which
