@@ -12,6 +12,8 @@
     home.packages = with pkgs; [
         gcc
         nodejs
-        # zig
+        cargo
+        rustc
+        zig
     ];
 }
