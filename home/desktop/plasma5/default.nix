@@ -7,6 +7,8 @@
             sddm.enable = true;
             autoLogin.enable = true;
             autoLogin.user = "liam";
+            defaultSession = "plasma";
+            # defaultSession = "plasmawayland";
         };
         desktopManager.plasma5.enable = true;
     };
