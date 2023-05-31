@@ -3,7 +3,6 @@
 {
     imports = [
         ../../home/common
-        ../../home/common/core.nix
         ../../home/common/dev.nix
         ../../home/common/ssh.nix
     ];
