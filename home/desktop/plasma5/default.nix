@@ -13,6 +13,10 @@
         desktopManager.plasma5.enable = true;
     };
 
+    environment.systemPackages = with pkgs; [
+        kate
+    ];
+
     environment.plasma5.excludePackages = with pkgs; [
         ark
         elisa
