@@ -11,6 +11,7 @@
 
     home.packages = with pkgs; [
         gcc
+        gnumake
         nodejs
         cargo
         rustc
