@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-    home.packages = with pkgs; [
-        onlyoffice-bin
-    ];
+  home.packages = with pkgs; [
+    onlyoffice-bin
+  ];
 }

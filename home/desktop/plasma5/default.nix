@@ -1,29 +1,29 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-    services.xserver = {
-        enable = true;
-        displayManager = {
-            sddm.enable = true;
-            autoLogin.enable = true;
-            autoLogin.user = "liam";
-            defaultSession = "plasma";
-            # defaultSession = "plasmawayland";
-        };
-        desktopManager.plasma5.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager = {
+      sddm.enable = true;
+      autoLogin.enable = true;
+      autoLogin.user = "liam";
+      defaultSession = "plasma";
+      # defaultSession = "plasmawayland";
     };
+    desktopManager.plasma5.enable = true;
+  };
 
-    environment.systemPackages = with pkgs; [
-        kate
-    ];
+  environment.systemPackages = with pkgs; [
+    kate
+  ];
 
-    environment.plasma5.excludePackages = with pkgs; [
-        ark
-        elisa
-        gwenview
-        khelpcenter
-        kinfocenter
-        konsole
-        okular
-    ];
+  environment.plasma5.excludePackages = with pkgs; [
+    ark
+    elisa
+    gwenview
+    khelpcenter
+    kinfocenter
+    konsole
+    okular
+  ];
 }

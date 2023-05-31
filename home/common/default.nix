@@ -1,21 +1,21 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-    imports = [
-        ./chromium
-    ];
+  imports = [
+    ./chromium
+  ];
 
-    home.packages = with pkgs; [
-        exa
-        file
-        fzf
-        htop
-        neofetch
-        p7zip
-        pciutils
-        ripgrep
-        tree
-        which
-        xclip
-    ];
+  home.packages = with pkgs; [
+    exa
+    file
+    fzf
+    htop
+    neofetch
+    p7zip
+    pciutils
+    ripgrep
+    tree
+    which
+    xclip
+  ];
 }
