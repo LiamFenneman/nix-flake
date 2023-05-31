@@ -55,6 +55,7 @@ in
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    lmodern
   ];
 
   programs.zsh.enable = true;

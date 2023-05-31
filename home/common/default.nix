@@ -15,6 +15,7 @@
     pciutils
     ripgrep
     tree
+    unzip
     which
     xclip
   ];
