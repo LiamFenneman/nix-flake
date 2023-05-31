@@ -16,5 +16,6 @@
         ripgrep
         tree
         which
+        xclip
     ];
 }
