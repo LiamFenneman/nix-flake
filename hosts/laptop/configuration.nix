@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   user = "liam";
@@ -11,12 +11,13 @@ in
   ];
 
   boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 10;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.initrd.secrets = { "/crypto_keyfile.bin" = null; };
+  boot.initrd.luks.devices."luks-70530399-fd4b-4551-b76c-40856fe5a0b5".device = "/dev/disk/by-uuid/70530399-fd4b-4551-b76c-40856fe5a0b5";
+  boot.initrd.luks.devices."luks-70530399-fd4b-4551-b76c-40856fe5a0b5".keyFile = "/crypto_keyfile.bin";
 
-  networking.hostName = "nixos-test";
+  networking.hostName = "laptop";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Pacific/Auckland";
@@ -87,4 +88,5 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
+
 }
