@@ -5,8 +5,8 @@
     ../../home/common
     ../../home/common/dev.nix
     ../../home/common/ssh.nix
-    #../../home/common/tex.nix
-    #../../home/common/office.nix
+    ../../home/common/tex.nix
+    ../../home/common/office.nix
   ];
 
   home.username = "liam";
