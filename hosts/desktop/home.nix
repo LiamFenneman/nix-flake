@@ -7,6 +7,7 @@
     ../../home/common/ssh.nix
     #../../home/common/tex.nix
     #../../home/common/office.nix
+    ../../home/desktop/hyprland/home.nix
   ];
 
   home.username = "liam";

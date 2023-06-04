@@ -7,6 +7,7 @@ in
   imports = [
     ./hardware-configuration.nix
 
+    ../../home/desktop/hyprland
     ../../home/desktop/plasma5
   ];
 
@@ -20,6 +21,7 @@ in
       efiSupport = true;
       devices = [ "nodev" ];
       useOSProber = true;
+      configurationLimit = 30;
     };
   };
   time.hardwareClockInLocalTime = true;

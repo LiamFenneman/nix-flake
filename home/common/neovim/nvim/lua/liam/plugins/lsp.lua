@@ -57,6 +57,11 @@ return {
                 capabilities = capabilities,
             }
 
+            -- Nix
+            lspconfig.nil.setup {
+                capabilities = capabilities,
+            }
+
             -- Zig
             lspconfig.zls.setup {
                 capabilities = capabilities,
