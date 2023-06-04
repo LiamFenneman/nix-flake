@@ -28,6 +28,10 @@
         # FrankerFaceZ
         id = "fadndhdgpmmaapbmfcknlfgcflmmmieb";
       }
+      {
+        # Stylus
+        id = "clngdbkpkpeebahjckkjfobafhncgmne";
+      }
     ];
   };
 }

@@ -7,6 +7,8 @@ in
   imports = [
     ./hardware-configuration.nix
 
+    ../../home/common/gaming.nix
+
     ../../home/desktop/hyprland
     ../../home/desktop/plasma5
   ];

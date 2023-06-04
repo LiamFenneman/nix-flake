@@ -57,11 +57,6 @@ return {
                 capabilities = capabilities,
             }
 
-            -- Nix
-            lspconfig.nil.setup {
-                capabilities = capabilities,
-            }
-
             -- Zig
             lspconfig.zls.setup {
                 capabilities = capabilities,
@@ -89,6 +84,11 @@ return {
                         },
                     },
                 },
+            }
+
+            -- Nix
+            lspconfig.nil_ls.setup {
+                capabilities = capabilities,
             }
 
             local function gmap(keys, func, desc)
