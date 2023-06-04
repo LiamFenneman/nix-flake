@@ -16,4 +16,11 @@
     source = ./nvim;
     target = ".config/nvim";
   };
+
+  home.file.rustfmt = {
+    enable = true;
+    recursive = true;
+    source = ./rustfmt;
+    target = ".config/rustfmt";
+  };
 }

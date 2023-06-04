@@ -25,10 +25,13 @@ vim.o.smartindent = true
 
 -- Misc.
 vim.o.guicursor = ''
-vim.o.wrap = false
-vim.o.colorcolumn = '120'
 vim.o.scrolloff = 8
 vim.o.errorbells = false
+
+-- Text Width
+vim.o.wrap = false
+vim.o.colorcolumn = '80'
+vim.o.textwidth = 80
 
 -- Give more space for displaying messages.
 vim.o.cmdheight = 1
@@ -49,6 +52,3 @@ vim.o.background = 'dark'
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.o.foldenable = false
-
--- Text Width
-vim.o.textwidth = 110

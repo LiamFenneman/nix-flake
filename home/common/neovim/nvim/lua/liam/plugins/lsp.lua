@@ -40,18 +40,6 @@ return {
                 }
             }
 
-            -- Nix
-            lspconfig.nil_ls.setup {
-                capabilities = capabilities,
-                settings = {
-                    ['nil'] = {
-                        formatting = {
-                            command = { 'nixpkgs-fmt' },
-                        },
-                    },
-                },
-            }
-
             -- Rust
             lspconfig.rust_analyzer.setup {
                 capabilities = capabilities,
@@ -71,6 +59,11 @@ return {
 
             -- Zig
             lspconfig.zls.setup {
+                capabilities = capabilities,
+            }
+
+            -- OCaml
+            lspconfig.ocamllsp.setup {
                 capabilities = capabilities,
             }
 
