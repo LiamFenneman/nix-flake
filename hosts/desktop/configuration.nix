@@ -5,8 +5,10 @@ let
 in
 {
   imports = [
-      ./hardware-configuration.nix
-    ];
+    ./hardware-configuration.nix
+
+    ../../home/desktop/plasma5
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -37,11 +39,12 @@ in
   };
 
   services.xserver.enable = true;
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "liam";
-
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    modesetting.enable = true;
+  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
