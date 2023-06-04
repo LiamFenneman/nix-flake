@@ -10,8 +10,19 @@ in
     ../../home/desktop/plasma5
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
+    grub = {
+      enable = true;
+      efiSupport = true;
+      devices = [ "nodev" ];
+      useOSProber = true;
+    };
+  };
+  time.hardwareClockInLocalTime = true;
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
   };
