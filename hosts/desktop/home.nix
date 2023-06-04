@@ -14,10 +14,10 @@
 
   programs.home-manager.enable = true;
   programs.git.enable = true;
-  #programs.git.signing = {
-  #  key = "E2F02776F6E9E8DF";
-  #  signByDefault = true;
-  #};
+  programs.git.signing = {
+    key = "6E2A9775A476DC6A";
+    signByDefault = true;
+  };
 
   home.stateVersion = "22.11";
 }
