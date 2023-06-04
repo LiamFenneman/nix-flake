@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -6,7 +6,6 @@
     ../../home/common/dev.nix
     ../../home/common/media.nix
     ../../home/common/office.nix
-    ../../home/common/ssh.nix
     ../../home/common/tex.nix
 
     ../../home/desktop/hyprland/home.nix
@@ -21,6 +20,10 @@
     key = "6E2A9775A476DC6A";
     signByDefault = true;
   };
+
+  home.packages = with pkgs; [
+    networkmanagerapplet
+  ];
 
   home.stateVersion = "22.11";
 }

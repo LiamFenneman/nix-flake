@@ -19,7 +19,7 @@ window#waybar {
     background-color: rgba(26, 27, 38, 0.9);
 }
 
-#clock, #memory, #cpu, #network, #pulseaudio, #custom-spotify {
+#clock, #tray, #memory, #cpu, #network, #pulseaudio, #custom-spotify {
     padding: 0 5px;
     margin: 0 5px;
 }

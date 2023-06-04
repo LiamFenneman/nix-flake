@@ -3,22 +3,35 @@
     "position": "bottom",
     "height": 24,
     "modules-left": ["custom/spotify"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock"],
+    "modules-center": ["wlr/workspaces"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "disk", "tray", "clock"],
     "clock": {
         "format": "{:%Y-%m-%d %H:%M}"
     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "show-passive-items": true,
+    },
+    "disk": {
+        "path": "/",
+        "interval": 30,
+        "format": "DISK: {used} ({percentage_used}%)",
+    },
     "memory": {
-        "format": "RAM: {}%"
+        "format": "RAM: {used}GiB ({percentage}%)",
+        "tooltip-format": "{used:0.1f}GiB used ({percentage}%)",
     },
     "cpu": {
-        "format": "CPU: {usage}%"
+        "format": "CPU: {usage}%",
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr} ",
+        "format-ethernet": "{ifname} ",
         "format-disconnected": "Disconnected ⚠",
-        "family": "ipv6"
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "family": "ipv4",
+        "on-click": "nm-connection-editor",
     },
     "pulseaudio": {
         //"scroll-step": 1,
@@ -32,15 +45,30 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", ""]
+            "default": ["", ""],
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+    },
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "active": "",
+            "default": "",
+        },
+        "sort-by-number": true,
     },
     "custom/spotify": {
         "format": " {}",
-        "max-length": 40,
+        "max-length": 50,
         "interval": 30,
         "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",
-        "exec-if": "pgrep spotify"
-    }
+        "exec-if": "pgrep spotify",
+    },
 }

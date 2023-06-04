@@ -32,5 +32,6 @@
     waybar
     wl-clipboard
     wofi
+    xdg-desktop-portal-hyprland
   ];
 }

@@ -33,6 +33,7 @@ in
 
   networking.hostName = "desktop";
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = true;
 
   time.timeZone = "Pacific/Auckland";
   i18n.defaultLocale = "en_NZ.UTF-8";

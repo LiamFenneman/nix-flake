@@ -6,6 +6,7 @@
     ./kitty
     ./neovim
     ./shell
+    ./ssh.nix
     ./tmux
   ];
 

@@ -8,4 +8,9 @@
     xwayland.hidpi = true;
     nvidiaPatches = true;
   };
+
+  environment.plasma5.excludePackages = with pkgs; [
+    dolphin
+    spectacle
+  ];
 }
