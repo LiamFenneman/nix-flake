@@ -29,7 +29,7 @@ in
     "/crypto_keyfile.bin" = null;
   };
 
-  networking.hostName = "desktop"; # Define your hostname.
+  networking.hostName = "desktop";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Pacific/Auckland";
@@ -58,6 +58,7 @@ in
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
   };
+  services.xserver.displayManager.defaultSession = "hyprland";
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -121,5 +122,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }

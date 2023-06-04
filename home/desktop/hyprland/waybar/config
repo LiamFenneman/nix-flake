@@ -1,0 +1,46 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 24,
+    "modules-left": ["custom/spotify"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock"],
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}"
+    },
+    "memory": {
+        "format": "RAM: {}%"
+    },
+    "cpu": {
+        "format": "CPU: {usage}%"
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr} ",
+        "format-disconnected": "Disconnected ⚠",
+        "family": "ipv6"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/spotify": {
+        "format": " {}",
+        "max-length": 40,
+        "interval": 30,
+        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",
+        "exec-if": "pgrep spotify"
+    }
+}
