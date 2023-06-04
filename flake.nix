@@ -16,6 +16,20 @@
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
+      "desktop" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/desktop/configuration.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.liam = import ./hosts/desktop/home.nix;
+          }
+        ];
+      };
       "laptop" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
