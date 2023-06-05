@@ -5,10 +5,12 @@
     enable = true;
     extraConfig = ''
       AddKeysToAgent yes
-
-      Hostname github.com
-          Host github.com
-          IdentityFile ~/.ssh/github
     '';
+    matchBlocks = {
+      "github.com" = {
+        hostname = "github.com";
+        identityFile = "~/.ssh/github";
+      };
+    };
   };
 }
