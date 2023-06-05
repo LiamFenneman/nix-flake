@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "bottom",
-    "height": 24,
+    "height": 34,
     "modules-left": ["custom/spotify"],
     "modules-center": ["wlr/workspaces"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "disk", "tray", "clock"],
@@ -67,8 +67,10 @@
     "custom/spotify": {
         "format": " {}",
         "max-length": 50,
-        "interval": 30,
+        "interval": 5,
         "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",
-        "exec-if": "pgrep spotify",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "pkill spotify",
+        "exec-if": "pgrep spotify"
     },
 }
