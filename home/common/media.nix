@@ -8,12 +8,13 @@
 
     # Documents
     nnn
-    cinnamon.nemo-with-extensions
+    xfce.thunar
 
     # Music
     spotify
 
     # Video
+    ffmpeg_6-full
     mpv
     vlc
 
