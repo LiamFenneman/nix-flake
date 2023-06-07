@@ -89,6 +89,13 @@ return {
             -- Nix
             lspconfig.nil_ls.setup {
                 capabilities = capabilities,
+                settings = {
+                    ['nil'] = {
+                        formattings = {
+                            command = { 'nixpkgs-fmt' },
+                        },
+                    },
+                },
             }
 
             local function gmap(keys, func, desc)
