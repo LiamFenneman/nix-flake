@@ -16,7 +16,7 @@
     "disk": {
         "path": "/",
         "interval": 30,
-        "format": "DISK: {used} ({percentage_used}%)",
+        "format": "DISK: {used} ({free})",
     },
     "memory": {
         "format": "RAM: {used}GiB ({percentage}%)",

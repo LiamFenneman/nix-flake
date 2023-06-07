@@ -2,15 +2,12 @@
 
 {
   imports = [
-    ../../home/common
-    ../../home/common/gtk
+    ../../common/home
+    ../../common/home/develop
+    ../../common/home/media
+    ../../common/home/office
 
-    ../../home/desktop/hyprland/home.nix
-
-    ../../home/common/dev.nix
-    ../../home/common/media.nix
-    ../../home/common/office.nix
-    ../../home/common/tex.nix
+    ../../desktop/hyprland/home.nix
   ];
 
   home.username = "liam";

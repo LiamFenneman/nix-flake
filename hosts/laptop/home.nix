@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ../../home/common
-    ../../home/common/dev.nix
-    ../../home/common/tex.nix
-    ../../home/common/office.nix
+    ../../common/home
+    ../../common/home/develop
+    ../../common/home/media
+    ../../common/home/office
   ];
 
   home.username = "liam";

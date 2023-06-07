@@ -5,9 +5,9 @@
     ./git
     ./kitty
     ./neovim
-    ./shell
-    ./ssh.nix
+    ./ssh
     ./tmux
+    ./zsh
   ];
 
   home.packages = with pkgs; [

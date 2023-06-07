@@ -3,6 +3,8 @@
 {
   imports = [
     ./chromium
+    ./gtk
+    ./media
   ];
 
   home.packages = with pkgs; [

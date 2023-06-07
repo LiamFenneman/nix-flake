@@ -16,6 +16,7 @@
 
     shellAliases = {
       tmux = "tmux -f $HOME/.config/tmux/tmux.conf";
+      ngrs = "git add -A && sudo nixos-rebuild switch";
       nrs = "sudo nixos-rebuild switch";
       nr = "sudo nixos-rebuild";
 

@@ -7,10 +7,10 @@ in
   imports = [
     ./hardware-configuration.nix
 
-    ../../home/common/thunar
-    ../../home/common/gaming.nix
+    ../../common/nix/gaming
+    ../../common/nix/thunar
 
-    ../../home/desktop/hyprland
+    ../../desktop/hyprland
   ];
 
   boot.loader = {

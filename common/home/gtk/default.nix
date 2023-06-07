@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    # gnome.adwaita-icon-theme
     gnome.gnome-themes-extra
     gtk-engine-murrine
   ];

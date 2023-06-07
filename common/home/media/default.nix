@@ -21,8 +21,4 @@
     # Other
     chatterino2
   ];
-
-  home.sessionVariables = {
-    NNN_BMS = "p:~/Documents/Projects;u:~/Documents/University;";
-  };
 }

@@ -7,7 +7,7 @@ in
   imports = [
     ./hardware-configuration.nix
 
-    ../../home/desktop/plasma5
+    ../../desktop/plasma5
   ];
 
   boot.loader.systemd-boot.enable = true;
