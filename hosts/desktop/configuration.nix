@@ -10,7 +10,6 @@ in
     ../../home/common/gaming.nix
 
     ../../home/desktop/hyprland
-    # ../../home/desktop/plasma5
   ];
 
   boot.loader = {
@@ -112,11 +111,16 @@ in
 
   services.gvfs.enable = true;
 
-  nix.settings.auto-optimise-store = true;
-  nix.gc = {
-    automatic = true;
-    dates = "monthly";
-    options = "--delete-older-than 30d";
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = true;
+      dates = "monthly";
+      options = "--delete-older-than 30d";
+    };
   };
 
   # This value determines the NixOS release from which the default
