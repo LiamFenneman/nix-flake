@@ -6,10 +6,6 @@
     libva-utils
     playerctl
 
-    # Documents
-    nnn
-    xfce.thunar
-
     # Music
     spotify
 

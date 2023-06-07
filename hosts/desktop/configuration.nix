@@ -7,6 +7,7 @@ in
   imports = [
     ./hardware-configuration.nix
 
+    ../../home/common/thunar
     ../../home/common/gaming.nix
 
     ../../home/desktop/hyprland
@@ -108,8 +109,6 @@ in
     enable = true;
     enableSSHSupport = true;
   };
-
-  services.gvfs.enable = true;
 
   nix = {
     settings = {
