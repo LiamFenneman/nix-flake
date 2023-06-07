@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 let
   user = "liam";
@@ -12,6 +12,8 @@ in
 
     ../../desktop/hyprland
   ];
+
+  nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
 
   boot.loader = {
     efi = {

@@ -14,6 +14,7 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }: {
