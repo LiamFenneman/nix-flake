@@ -3,12 +3,14 @@
 {
   imports = [
     ../../home/common
+    ../../home/common/gtk
+
+    ../../home/desktop/hyprland/home.nix
+
     ../../home/common/dev.nix
     ../../home/common/media.nix
     ../../home/common/office.nix
     ../../home/common/tex.nix
-
-    ../../home/desktop/hyprland/home.nix
   ];
 
   home.username = "liam";
@@ -23,6 +25,7 @@
 
   home.packages = with pkgs; [
     networkmanagerapplet
+    pavucontrol
   ];
 
   home.stateVersion = "22.11";

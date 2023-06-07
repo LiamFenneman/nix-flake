@@ -27,8 +27,9 @@
   };
 
   home.packages = with pkgs; [
+    dunst
     hyprpaper
-    pavucontrol
+    qt6.qtwayland
     waybar
     wl-clipboard
     wofi

@@ -10,7 +10,7 @@ in
     ../../home/common/gaming.nix
 
     ../../home/desktop/hyprland
-    ../../home/desktop/plasma5
+    # ../../home/desktop/plasma5
   ];
 
   boot.loader = {
@@ -61,7 +61,6 @@ in
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
   };
-  services.xserver.displayManager.defaultSession = "hyprland";
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -110,6 +109,8 @@ in
     enable = true;
     enableSSHSupport = true;
   };
+
+  services.gvfs.enable = true;
 
   nix.settings.auto-optimise-store = true;
   nix.gc = {

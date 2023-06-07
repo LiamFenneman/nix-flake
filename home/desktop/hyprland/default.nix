@@ -9,8 +9,13 @@
     nvidiaPatches = true;
   };
 
-  environment.plasma5.excludePackages = with pkgs; [
-    dolphin
-    spectacle
-  ];
+  services.getty.autologinUser = "liam";
+
+  services.xserver.displayManager = {
+    autoLogin.enable = true;
+    autoLogin.user = "liam";
+    defaultSession = "hyprland";
+    lightdm.enable = true;
+    lightdm.greeter.enable = true;
+  };
 }
