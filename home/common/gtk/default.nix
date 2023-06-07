@@ -2,32 +2,33 @@
 
 {
   home.packages = with pkgs; [
+    # gnome.adwaita-icon-theme
     gnome.gnome-themes-extra
-    gnome.adwaita-icon-theme
+    gtk-engine-murrine
   ];
 
   gtk = {
     enable = true;
-    cursorTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "Adwaita Dark";
-      size = 16;
+    theme = {
+      package = pkgs.arc-theme;
+      name = "Arc-Dark";
     };
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "Adwaita Dark";
+      package = pkgs.arc-icon-theme;
+      name = "Arc";
     };
-    theme = {
-      package = pkgs.gnome.gnome-themes-extra;
-      name = "Adwaita Dark";
+    cursorTheme = {
+      package = pkgs.nordzy-cursor-theme;
+      name = "Nordzy-cursors";
+      size = 16;
     };
   };
 
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.gnome.adwaita-icon-theme;
-    name = "Adwaita Dark";
+    package = pkgs.nordzy-cursor-theme;
+    name = "Nordzy-cursors";
     size = 16;
   };
-  xresources.extraConfig = "Xcursor.theme: Adwaita Dark";
+  xresources.extraConfig = "Xcursor.theme: Nordzy-cursors";
 }
