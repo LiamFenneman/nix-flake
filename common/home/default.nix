@@ -20,5 +20,6 @@
     unzip
     which
     xclip
+    qalculate-gtk
   ];
 }
