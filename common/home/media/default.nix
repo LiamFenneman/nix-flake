@@ -18,6 +18,9 @@
     feh
     xfce.ristretto
 
+    # PDF Viewer
+    evince
+
     # Other
     chatterino2
   ];

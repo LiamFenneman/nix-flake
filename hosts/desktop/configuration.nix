@@ -9,6 +9,7 @@ in
 
     ../../common/nix/gaming
     ../../common/nix/thunar
+    ../../common/nix/xdg
 
     ../../desktop/hyprland
   ];
