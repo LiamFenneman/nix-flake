@@ -7,8 +7,10 @@ in
   imports = [
     ./hardware-configuration.nix
 
+    ../../common/nix/flatpak
     ../../common/nix/gaming
     ../../common/nix/thunar
+    ../../common/nix/virt
     ../../common/nix/xdg
 
     ../../desktop/hyprland
