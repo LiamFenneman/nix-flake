@@ -5,6 +5,8 @@
     libsForQt5.polkit-kde-agent
   ];
 
+  security.polkit.enable = true;
+
   systemd.user.services.polkit-kde-authentication-agent-1 = {
     description = "polkit-kde-authentication-agent-1";
     wantedBy = [ "graphical-session.target" ];
