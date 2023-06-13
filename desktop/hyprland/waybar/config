@@ -9,7 +9,7 @@
         "format": "{:%Y-%m-%d %H:%M}"
     },
     "tray": {
-        "icon-size": 21,
+        "icon-size": 18,
         "spacing": 10,
         "show-passive-items": true,
     },
