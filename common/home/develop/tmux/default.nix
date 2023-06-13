@@ -9,7 +9,7 @@
     keyMode = "vi";
     mouse = true;
     prefix = "C-a";
-    terminal = "tmux-256color";
+    terminal = "screen-256color";
     extraConfig = ''
       setw -g xterm-keys on
 

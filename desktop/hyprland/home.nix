@@ -22,10 +22,6 @@
     target = ".config/wofi";
   };
 
-  home.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = 1;
-  };
-
   home.packages = with pkgs; [
     dunst
     hyprpaper
