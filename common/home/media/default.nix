@@ -15,7 +15,9 @@
     vlc
 
     # Images
+    aseprite
     feh
+    gimp
     xfce.ristretto
 
     # PDF Viewer

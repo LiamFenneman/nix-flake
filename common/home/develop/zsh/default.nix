@@ -14,6 +14,13 @@
       export PATH="$HOME/.cargo/bin:$PATH";
 
       export EDITOR="nvim";
+
+      export FZF_ALT_C_OPTS="--height 60% \
+                             --border none \
+                             --layout reverse \
+                             --prompt '∷ ' \
+                             --pointer ▶ \
+                             --marker ⇒"
     '';
 
     shellAliases = {
