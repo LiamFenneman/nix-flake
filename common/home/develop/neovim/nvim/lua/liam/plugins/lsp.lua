@@ -91,7 +91,7 @@ return {
                 capabilities = capabilities,
                 settings = {
                     ['nil'] = {
-                        formattings = {
+                        formatting = {
                             command = { 'nixpkgs-fmt' },
                         },
                     },
