@@ -80,7 +80,7 @@ return {
                             ['en-NZ'] = words,
                         },
                         additionalRules = {
-                            languageModel = '~/.local/share/ltex-ls/ngrams-en/',
+                            languageModel = '~/.local/share/nvim/ltex/ngrams-en/',
                         },
                     },
                 },

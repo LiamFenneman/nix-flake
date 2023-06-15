@@ -14,6 +14,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    xarchiver
+    gnome.file-roller
   ];
 }
