@@ -52,6 +52,11 @@ return {
                 },
             }
 
+            -- C/C++ (Clang)
+            lspconfig.clangd.setup {
+                capabilities = capabilities,
+            }
+
             -- Typescript
             lspconfig.tsserver.setup {
                 capabilities = capabilities,

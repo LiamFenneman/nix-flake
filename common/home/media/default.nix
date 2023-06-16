@@ -6,7 +6,8 @@
     libva-utils
     playerctl
 
-    # Music
+    # Audio/Music
+    easyeffects
     spotify
 
     # Video
