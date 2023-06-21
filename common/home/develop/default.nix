@@ -18,7 +18,7 @@ in
 
   home.packages = with pkgs; [
     clang-tools_16
-    gcc
+    clang
     gnumake
     nodejs
     rust-nightly
