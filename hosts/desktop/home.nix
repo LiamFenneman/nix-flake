@@ -7,7 +7,8 @@
     ../../common/home/media
     ../../common/home/office
 
-    ../../desktop/hyprland/home.nix
+    # ../../desktop/hyprland/home.nix
+    ../../desktop/i3/home.nix
   ];
 
   home.username = "liam";

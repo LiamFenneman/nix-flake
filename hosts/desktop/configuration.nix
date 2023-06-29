@@ -14,7 +14,8 @@ in
     ../../common/nix/virt
     ../../common/nix/xdg
 
-    ../../desktop/hyprland
+    # ../../desktop/hyprland
+    ../../desktop/i3
   ];
 
   nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
@@ -88,6 +89,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   services.xserver.libinput.enable = true;
+  services.xserver.libinput.mouse.accelSpeed = "-0.225";
   services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [

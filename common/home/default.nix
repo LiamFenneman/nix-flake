@@ -15,7 +15,6 @@
     htop
     inetutils
     neofetch
-    neofetch
     p7zip
     pciutils
     qalculate-gtk

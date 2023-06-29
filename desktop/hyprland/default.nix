@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../common/home/polkit
+    ../../common/nix/polkit
   ];
 
   environment.sessionVariables = {
