@@ -8,6 +8,11 @@
 
   gtk = {
     enable = true;
+    font = {
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Sans";
+      size = 10;
+    };
     theme = {
       package = pkgs.arc-theme;
       name = "Arc-Dark";
