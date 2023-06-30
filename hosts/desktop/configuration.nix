@@ -89,7 +89,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   services.xserver.libinput.enable = true;
-  services.xserver.libinput.mouse.accelSpeed = "-0.225";
+  services.xserver.libinput.mouse.accelSpeed = "-0.3";
   services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [
