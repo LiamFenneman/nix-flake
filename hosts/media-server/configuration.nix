@@ -1,8 +1,6 @@
-
 { inputs, config, pkgs, ... }:
 
 let
-  user = "liam";
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
     export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
@@ -18,15 +16,45 @@ in
 
   nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
 
+  nixpkgs.config.allowUnfree = true;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 30;
   boot.loader.efi.canTouchEfiVariables = true;
-  time.hardwareClockInLocalTime = true;
+
+  services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
+  };
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.prime = {
+    offload.enable = true;
+    offload.enableOffloadCmd = true;
+    intelBusId = "PCI:1:0:0";
+    nvidiaBusId = "PCI:2:0:0";
+  };
 
   networking.hostName = "media-server";
-  networking.networkmanager.enable = true;
+  networking = {
+    interfaces.enp6s18.ipv4.addresses = [{
+      address = "192.168.1.101";
+      prefixLength = 24;
+    }];
+    defaultGateway = "192.168.1.1";
+    nameservers = [ "192.168.1.1" "1.1.1.1" ];
+  };
 
   time.timeZone = "Pacific/Auckland";
+  time.hardwareClockInLocalTime = true;
   i18n.defaultLocale = "en_NZ.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_NZ.UTF-8";
@@ -45,17 +73,6 @@ in
     xkbVariant = "";
   };
 
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.prime = {
-    offload.enable = true;
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
-  };
-
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -66,16 +83,14 @@ in
     pulse.enable = true;
   };
 
-  users.users.${user} = {
+  # services.xserver.libinput.enable = true;
+  # services.printing.enable = true;
+
+  users.users.liam = {
     isNormalUser = true;
     description = "Liam";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "audio" ];
   };
-
-  nixpkgs.config.allowUnfree = true;
-
-  services.xserver.libinput.enable = true;
-  services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [
     nvidia-offload

@@ -61,20 +61,6 @@
           }
         ];
       };
-      "nixos-test" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/nixos-test/configuration.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.liam = import ./hosts/nixos-test/home.nix;
-          }
-        ];
-      };
     };
   };
 }
