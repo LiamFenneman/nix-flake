@@ -30,6 +30,7 @@ in
     driSupport32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver
+      intel-compute-runtime
       vaapiVdpau
       libvdpau-va-gl
     ];
@@ -85,6 +86,12 @@ in
 
   # services.xserver.libinput.enable = true;
   # services.printing.enable = true;
+
+  services.jellyfin = {
+    enable = true;
+    group = "users";
+    openFirewall = true;
+  };
 
   users.users.liam = {
     isNormalUser = true;
