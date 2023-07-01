@@ -89,8 +89,6 @@ in
     lmodern
   ];
 
-  programs.zsh.enable = true;
-
   services.openssh = {
     enable = true;
     settings = {
