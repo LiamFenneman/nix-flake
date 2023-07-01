@@ -6,6 +6,8 @@ font pango:JetBrains Mono Nerd Font 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec easyeffects
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -57,6 +59,8 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+s move scratchpad
 bindsym $mod+s scratchpad show
 
+bindsym $mod+m --release exec "import png:- | xclip -selection clipboard -t image/png"
+
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -67,6 +71,9 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+assign [class="^steam$"] $ws3
+assign [class="^easyeffects$"] $ws7
 
 workspace $ws1 output primary
 workspace $ws2 output primary

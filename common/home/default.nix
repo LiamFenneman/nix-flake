@@ -10,6 +10,7 @@
 
   home.packages = with pkgs; [
     exa
+    fd
     file
     fzf
     htop
