@@ -87,10 +87,41 @@ in
   # services.xserver.libinput.enable = true;
   # services.printing.enable = true;
 
+  # Jellyfin   :8096
+  # Jellyseerr :5055
+  # Radarr     :7878
+  # Sonarr     :8989
   services.jellyfin = {
     enable = true;
     group = "users";
     openFirewall = true;
+  };
+  services.jellyseerr = {
+    enable = true;
+    port = 5055;
+    openFirewall = true;
+  };
+  services.radarr = {
+    enable = true;
+    group = "users";
+    openFirewall = true;
+  };
+  services.sonarr = {
+    enable = true;
+    group = "users";
+    openFirewall = true;
+  };
+  services.jackett = {
+    enable = true;
+    group = "users";
+    openFirewall = true;
+  };
+  services.transmission = {
+    enable = true;
+    group = "users";
+    openFirewall = true;
+    openPeerPorts = true;
+    openRPCPort = true;
   };
 
   users.users.liam = {
