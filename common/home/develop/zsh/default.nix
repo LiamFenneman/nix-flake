@@ -23,6 +23,10 @@
                              --marker ⇒"
     '';
 
+    localVariables = {
+      WALLPAPER_DIR = ../../../../wallpapers;
+    };
+
     shellAliases = {
       tmux = "tmux -f $HOME/.config/tmux/tmux.conf";
       nrs = "sudo nixos-rebuild switch";
@@ -42,6 +46,8 @@
 
       u = "cd ~/Documents/University";
       p = "cd ~/Documents/Projects";
+
+      wp = "ls $WALLPAPER_DIR | fzf --preview=\"feh --bg-scale $WALLPAPER_DIR/{}\" | xargs -I {} feh --bg-scale $WALLPAPER_DIR/{}";
     };
 
     oh-my-zsh = {
