@@ -24,6 +24,7 @@
   home.packages = with pkgs; [
     networkmanagerapplet
     pavucontrol
+    featherpad
   ];
 
   home.stateVersion = "22.11";
