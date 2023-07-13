@@ -103,6 +103,11 @@ return {
                 },
             }
 
+            -- Ruby
+            lspconfig.ruby_ls.setup {
+                capabilities = capabilities,
+            }
+
             local function gmap(keys, func, desc)
                 if desc then
                     desc = 'LSP: ' .. desc
