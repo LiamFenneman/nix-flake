@@ -46,6 +46,7 @@
 
       u = "cd ~/Documents/University";
       p = "cd ~/Documents/Projects";
+      n = "cd ~/Documents/Notes";
 
       wp = "ls $WALLPAPER_DIR | fzf --preview=\"feh --bg-scale $WALLPAPER_DIR/{}\" | xargs -I {} feh --bg-scale $WALLPAPER_DIR/{}";
     };
