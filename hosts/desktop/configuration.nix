@@ -7,6 +7,7 @@ in
   imports = [
     ./hardware-configuration.nix
 
+    ../../common/nix/docker
     ../../common/nix/flake-templates
     ../../common/nix/flatpak
     ../../common/nix/gaming
