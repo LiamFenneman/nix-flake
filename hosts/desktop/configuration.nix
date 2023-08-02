@@ -83,7 +83,7 @@ in
   users.users.${user} = {
     isNormalUser = true;
     description = "Liam";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
     shell = pkgs.zsh;
   };
 
