@@ -13,8 +13,8 @@
   home.file.nvim = {
     enable = true;
     recursive = true;
-    source = ./nvim;
-    target = ".config/nvim";
+    source = ./nvim/init.lua;
+    target = ".config/nvim/init.lua";
   };
 
   home.file.rustfmt = {
