@@ -9,7 +9,7 @@
     keyMode = "vi";
     mouse = true;
     prefix = "C-a";
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
     extraConfig = ''
       setw -g xterm-keys on
 
@@ -20,6 +20,8 @@
 
       bind '"' split-window -c "#{pane_current_path}"
       bind % split-window -hc "#{pane_current_path}"
+
+      set-option -sa terminal-features ',xterm-kitty:RGB'
     '';
   };
 }
