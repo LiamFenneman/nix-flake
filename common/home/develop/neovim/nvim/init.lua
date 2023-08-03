@@ -215,8 +215,8 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move line down' })
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+-- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+-- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -357,22 +357,6 @@ local servers = {
 
   tsserver = {},
 
-  rust_analyzer = {
-    ['rust-analyzer'] = {
-      check = {
-        command = 'clippy'
-      },
-    },
-  },
-
-  nil_ls = {
-    ['nil'] = {
-      formatting = {
-        command = { 'nixpkgs-fmt' },
-      },
-    },
-  },
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -387,6 +371,30 @@ require('neodev').setup()
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+-- manually configure LSPs
+require('lspconfig').rust_analyzer.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    ['rust-analyzer'] = {
+      check = {
+        command = 'clippy'
+      },
+    },
+  },
+})
+require('lspconfig').nil_ls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    ['nil'] = {
+      formatting = {
+        command = { 'nixpkgs-fmt' },
+      },
+    },
+  },
+})
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require('mason-lspconfig')
