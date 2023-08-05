@@ -363,6 +363,19 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+
+  jdtls = {
+    java = {
+      format = {
+        enabled = true,
+        settings = {
+          -- url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
+          url = '/home/liam/nix-config/common/home/develop/neovim/java-google-style.xml',
+          profile = 'GoogleStyle',
+        },
+      },
+    },
+  },
 }
 
 -- Setup neovim lua configuration
