@@ -22,17 +22,17 @@
       name = "Arc";
     };
     cursorTheme = {
-      package = pkgs.nordzy-cursor-theme;
-      name = "Nordzy-cursors";
+      package = pkgs.capitaine-cursors;
+      name = "Capitaine Cursors";
       size = 16;
     };
   };
 
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.nordzy-cursor-theme;
-    name = "Nordzy-cursors";
+    package = pkgs.capitaine-cursors;
+    name = "Capitaine Cursors";
     size = 16;
   };
-  xresources.extraConfig = "Xcursor.theme: Nordzy-cursors";
+  xresources.extraConfig = "Xcursor.theme: Capitaine Cursors";
 }
