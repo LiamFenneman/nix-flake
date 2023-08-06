@@ -14,12 +14,12 @@
       size = 10;
     };
     theme = {
-      package = pkgs.arc-theme;
-      name = "Arc-Dark";
+      package = pkgs.libsForQt5.breeze-gtk;
+      name = "Breeze-Dark";
     };
     iconTheme = {
-      package = pkgs.arc-icon-theme;
-      name = "Arc";
+      package = pkgs.libsForQt5.breeze-icons;
+      name = "Breeze Dark";
     };
     cursorTheme = {
       package = pkgs.capitaine-cursors;
