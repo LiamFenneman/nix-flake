@@ -188,6 +188,7 @@ vim.o.background = 'dark'
 vim.o.undofile = true
 vim.o.swapfile = false
 vim.o.backup = false
+vim.o.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -344,6 +345,12 @@ local on_attach = function(_, bufnr)
   nmap('<leader>f', vim.lsp.buf.format, '[F]ormat current buffer')
 end
 
+-- Get words from the local dictionary for LTex LSP
+local words = {}
+for word in io.open(vim.fn.stdpath("config") .. "/spell/en.utf-8.add", "r"):lines() do
+	table.insert(words, word)
+end
+
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 --
@@ -373,6 +380,18 @@ local servers = {
           url = '/home/liam/nix-config/common/home/develop/neovim/java-google-style.xml',
           profile = 'GoogleStyle',
         },
+      },
+    },
+  },
+
+  ltex = {
+    ltex = {
+      language = 'en-NZ',
+      dictionary = {
+        ['en-NZ'] = words,
+      },
+      additionalRules = {
+        languageModel = '~/.config/nvim/spell/ngrams',
       },
     },
   },
