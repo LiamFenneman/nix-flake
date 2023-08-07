@@ -164,7 +164,9 @@ vim.g.editorconfig = true
 vim.o.clipboard = 'unnamedplus'
 vim.o.completeopt = 'menuone,noselect'
 vim.o.mouse = 'a'
+
 vim.o.wrap = false
+vim.o.textwidth = 80
 
 vim.o.hlsearch = false
 vim.o.ignorecase = true
