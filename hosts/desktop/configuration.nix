@@ -15,6 +15,8 @@ in
     ../../common/nix/virt
     ../../common/nix/xdg
 
+    ../../common/nix/zookeeper
+
     # ../../desktop/hyprland
     ../../desktop/i3
   ];
