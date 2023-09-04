@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 let
   user = "liam";
@@ -10,6 +10,8 @@ in
     ../../desktop/plasma5
   ];
 
+  nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
@@ -17,8 +19,11 @@ in
   boot.initrd.luks.devices."luks-70530399-fd4b-4551-b76c-40856fe5a0b5".device = "/dev/disk/by-uuid/70530399-fd4b-4551-b76c-40856fe5a0b5";
   boot.initrd.luks.devices."luks-70530399-fd4b-4551-b76c-40856fe5a0b5".keyFile = "/crypto_keyfile.bin";
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   networking.hostName = "laptop";
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = true;
 
   time.timeZone = "Pacific/Auckland";
   i18n.defaultLocale = "en_NZ.UTF-8";
@@ -76,6 +81,8 @@ in
     enable = true;
     enableSSHSupport = true;
   };
+
+  programs.dconf.enable = true;
 
   nix.settings.auto-optimise-store = true;
   nix.gc = {
