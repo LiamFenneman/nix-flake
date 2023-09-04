@@ -47,7 +47,7 @@ in
   users.users.${user} = {
     isNormalUser = true;
     description = "Liam";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
@@ -83,6 +83,14 @@ in
   };
 
   programs.dconf.enable = true;
+  virtualisation.docker.enable = true;
+
+  programs.java.enable = true;
+  programs.java.package = pkgs.jdk17;
+
+  services.zookeeper = {
+    enable = true;
+  };
 
   nix.settings.auto-optimise-store = true;
   nix.gc = {
