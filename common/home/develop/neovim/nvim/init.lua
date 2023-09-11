@@ -46,6 +46,15 @@ require('lazy').setup({
   },
 
   {
+    'LiamFenneman/quick-run.nvim',
+    opts = {
+      mappings = {
+        quick_run = '<F5>',
+      },
+    },
+  },
+
+  {
     'lukas-reineke/indent-blankline.nvim',
     opts = {
       char = '┊',
