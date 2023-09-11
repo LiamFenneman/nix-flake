@@ -15,8 +15,6 @@ in
     ../../common/nix/virt
     ../../common/nix/xdg
 
-    ../../common/nix/zookeeper
-
     # ../../desktop/hyprland
     ../../desktop/i3
   ];
@@ -119,11 +117,6 @@ in
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-  };
-
-  programs.java = {
-    enable = true;
-    package = pkgs.jdk17;
   };
 
   nix = {
