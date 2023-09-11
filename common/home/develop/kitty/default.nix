@@ -13,7 +13,7 @@
       confirm_os_window_close = 0;
       enable_audio_bell = false;
       listen_on = "unix:/tmp/kitty";
-      background_opacity = "0.85";
+      background_opacity = "1.0";
     };
     shellIntegration.enableZshIntegration = true;
   };
