@@ -32,7 +32,7 @@
       nrs = "sudo nixos-rebuild switch";
       nr = "sudo nixos-rebuild";
 
-      exa = "exa -1lag -s Name --group-directories-first --icons --color=always";
+      ls = "eza -1lag -s Name --group-directories-first --icons --color=always";
       mkdir = "mkdir -p";
       mv = "mv -i";
 
@@ -48,7 +48,7 @@
       p = "cd ~/Documents/Projects";
       n = "cd ~/Documents/Notes";
 
-      wp = "ls $WALLPAPER_DIR | fzf --preview=\"feh --bg-scale $WALLPAPER_DIR/{}\" | xargs -I {} feh --bg-scale $WALLPAPER_DIR/{}";
+      wp = "\\ls $WALLPAPER_DIR | fzf --preview=\"feh --bg-scale $WALLPAPER_DIR/{}\" | xargs -I {} feh --bg-scale $WALLPAPER_DIR/{}";
     };
 
     oh-my-zsh = {
