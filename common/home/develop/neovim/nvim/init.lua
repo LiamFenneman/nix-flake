@@ -96,8 +96,8 @@ require('lazy').setup({
       'onsails/lspkind.nvim',
 
       -- Copilot
-      'zbirenbaum/copilot.lua',
-      'zbirenbaum/copilot-cmp',
+      -- 'zbirenbaum/copilot.lua',
+      -- 'zbirenbaum/copilot-cmp',
     },
   },
 
@@ -533,8 +533,8 @@ cmp.setup({
   },
 })
 
-require('copilot').setup({
-  suggestion = { enabled = false },
-  panel = { enabled = false },
-})
-require('copilot_cmp').setup({ opts = { event = nil } })
+-- require('copilot').setup({
+--   suggestion = { enabled = false },
+--   panel = { enabled = false },
+-- })
+-- require('copilot_cmp').setup({ opts = { event = nil } })
