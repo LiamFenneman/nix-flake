@@ -18,6 +18,7 @@
     # Images
     aseprite
     feh
+    flameshot
     gimp
     xfce.ristretto
 
