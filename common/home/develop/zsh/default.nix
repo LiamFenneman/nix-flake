@@ -11,7 +11,9 @@
     initExtra = ''
       bindkey '^ ' autosuggest-accept
 
-      export PATH="$HOME/.cargo/bin:$PATH";
+      export PATH="$HOME/.cargo/bin:$PATH"
+      export FLYCTL_INSTALL="/home/liam/.fly"
+      export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
       export EDITOR="nvim";
 
