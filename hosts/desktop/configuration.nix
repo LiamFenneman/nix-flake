@@ -7,6 +7,7 @@ in
   imports = [
     ./hardware-configuration.nix
 
+    ../../common/nix/certs
     ../../common/nix/docker
     ../../common/nix/flake-templates
     ../../common/nix/flatpak
@@ -42,6 +43,9 @@ in
   networking.hostName = "desktop";
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;
+  networking.hosts = {
+    "192.168.1.201" = [ "gitea" ];
+  };
 
   time.timeZone = "Pacific/Auckland";
   i18n.defaultLocale = "en_NZ.UTF-8";
