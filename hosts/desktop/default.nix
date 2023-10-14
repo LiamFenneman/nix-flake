@@ -16,7 +16,7 @@
       firefox
       tree
     ];
-    initialPassword = "testpw";
+    initialPassword = "changeme";
   };
 
   system.stateVersion = "23.05";
