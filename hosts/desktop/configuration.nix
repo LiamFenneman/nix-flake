@@ -44,8 +44,26 @@ in
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;
   networking.hosts = {
-    "192.168.1.201" = [ "gitea" ];
+    "192.168.1.20" = [ "fileserver" ];
   };
+
+  services.rpcbind.enable = true;
+  systemd.mounts = [{
+    type = "nfs";
+    mountConfig = {
+      Options = "noauto";
+    };
+    what = "fileserver:/mnt/nfs";
+    where = "/mnt/nfs";
+  }];
+
+  systemd.automounts = [{
+    wantedBy = [ "multi-user.target" ];
+    automountConfig = {
+      TimeoutIdleSec = "600";
+    };
+    where = "/mnt/nfs";
+  }];
 
   time.timeZone = "Pacific/Auckland";
   i18n.defaultLocale = "en_NZ.UTF-8";
@@ -101,6 +119,7 @@ in
     git
     vim
     wget
+    nfs-utils
   ];
 
   fonts.packages = with pkgs; [
