@@ -14,6 +14,11 @@ in
       default = "Pacific/Auckland";
     };
 
+    hardwareClockInLocalTime = mkOption {
+      type = types.bool;
+      default = true;
+    };
+
     defaultLocale = mkOption {
       type = types.str;
       default = "en_NZ.UTF-8";
@@ -27,6 +32,7 @@ in
 
   config = mkIf cfg.enable {
     time.timeZone = cfg.timeZone;
+    time.hardwareClockInLocalTime = cfg.hardwareClockInLocalTime;
 
     i18n.defaultLocale = cfg.defaultLocale;
     i18n.extraLocaleSettings = {
