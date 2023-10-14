@@ -1,66 +1,30 @@
 {
-  description = "Liam's NixOS Flake";
-
-  nixConfig = {
-    experimental-features = [ "nix-command" "flakes" ];
-  };
+  description = "Liam's NixOS Flake 2.0";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.05";
-    home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprland.url = "github:hyprwm/Hyprland";
-    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations = {
-      "desktop" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/desktop/configuration.nix
+  outputs = { self, nixpkgs } @ inputs:
+    let
+      system = "x86_64-linux";
+      user = "liam";
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.liam = import ./hosts/desktop/home.nix;
-          }
-        ];
-      };
-      "laptop" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/laptop/configuration.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.liam = import ./hosts/laptop/home.nix;
-          }
-        ];
-      };
-      "media-server" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/media-server/configuration.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.liam = import ./hosts/media-server/home.nix;
-          }
-        ];
-      };
+      # This function creates a list of NixOS system configurations.
+      # Each system configuration is imported from the `./hosts/{hostname} file.
+      createSystems = hosts: (nixpkgs.lib.lists.forEach hosts (host: {
+        inherit system;
+        modules = [ ./hosts/${host} ];
+        specialArgs = { inherit inputs user system; };
+      }));
+    in
+    {
+      nixosConfigurations = createSystems [
+        "desktop"
+      ];
     };
+
+  nixConfig = {
+    experimental-features = [ "nix-command" "flakes" ];
   };
 }
