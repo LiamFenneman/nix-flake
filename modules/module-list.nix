@@ -7,4 +7,5 @@
   ./mounts.nix
   ./nix.nix
   ./user.nix
+  ./zsh.nix
 ]
