@@ -9,9 +9,12 @@ in
   options.custom.nix = {
     flakes.enable = mkEnableOption "Enable flakes" // { default = true; };
     gc.enable = mkEnableOption "Enable GC" // { default = true; };
+    allowUnfree = mkEnableOption "Allow unfree packages" // { default = true; };
   };
 
   config = {
+    nixpkgs.config.allowUnfree = cfg.allowUnfree;
+
     nix = {
       settings = {
         experimental-features = mkIf cfg.flakes.enable [ "nix-command" "flakes" ];
