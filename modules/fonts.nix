@@ -7,7 +7,7 @@ let
 in
 {
   options.custom.fonts = {
-    enable = mkEnableOption "Enable additional fonts";
+    enable = mkEnableOption "Enable additional fonts" // { default = true; };
   };
 
   config = mkIf cfg.enable {
