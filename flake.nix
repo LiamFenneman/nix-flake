@@ -13,11 +13,14 @@
       customModules = import ./modules/module-list.nix;
 
       # Create a NixOS system configuration from the given hostname.
-      mkSystem = host: (nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ ./hosts/${host} ] ++ customModules;
-        specialArgs = { inherit inputs user system; };
-      });
+      mkSystem = host: (nixpkgs.lib.nixosSystem
+        {
+          inherit system;
+          modules = [ ./hosts/${host} ] ++ customModules;
+          specialArgs = let hostName = host; in {
+            inherit inputs system user hostName;
+          };
+        });
 
       # Create a list of NixOS system configurations from a list of hostnames.
       # Each system configuration is imported from the `./hosts/{hostname}

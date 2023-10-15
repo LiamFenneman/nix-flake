@@ -6,6 +6,7 @@
 
   # Configure my custom modules.
   custom = {
+    input.enable = true;
     mounts.enable = true;
     user.isAdmin = true;
   };

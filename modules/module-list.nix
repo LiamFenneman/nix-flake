@@ -1,9 +1,12 @@
 [
+  ./base.nix
+  #
   ./audio.nix
   ./boot.nix
   ./fonts.nix
   ./git.nix
   ./i18n.nix
+  ./input.nix
   ./mounts.nix
   ./nix.nix
   ./ssh.nix
