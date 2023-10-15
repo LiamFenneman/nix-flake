@@ -14,4 +14,6 @@
   ./tmux.nix
   ./user.nix
   ./zsh.nix
+  # Package collections
+  ./pkgs/media.nix
 ]
