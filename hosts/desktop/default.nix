@@ -6,6 +6,7 @@
 
   # Configure my custom modules.
   custom = {
+    # docker.enable = true;
     input.enable = true;
     mounts.enable = true;
     user.isAdmin = true;

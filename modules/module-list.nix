@@ -3,6 +3,7 @@
   #
   ./audio.nix
   ./boot.nix
+  ./docker.nix
   ./fonts.nix
   ./git.nix
   ./i18n.nix
