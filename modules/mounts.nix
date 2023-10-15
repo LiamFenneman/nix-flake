@@ -11,6 +11,7 @@ in
   };
 
   config = mkIf cfg.enable {
+    boot.initrd.availableKernelModules = [ "nfs" "nfsv4" ];
     environment.systemPackages = [ pkgs.nfs-utils ];
     services.rpcbind.enable = true; # required for NFS
 
