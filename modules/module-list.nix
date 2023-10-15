@@ -6,6 +6,8 @@
   ./i18n.nix
   ./mounts.nix
   ./nix.nix
+  ./ssh.nix
+  ./tmux.nix
   ./user.nix
   ./zsh.nix
 ]
