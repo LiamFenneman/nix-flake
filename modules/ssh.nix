@@ -12,7 +12,6 @@ in
 
   config = mkIf cfg.enable {
     programs.ssh = {
-      startAgent = true;
       extraConfig = ''
         AddKeysToAgent yes
       '';
@@ -25,6 +24,11 @@ in
         PermitRootLogin = "no";
         X11Forwarding = true;
       };
+    };
+
+    programs.gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
     };
   };
 }
