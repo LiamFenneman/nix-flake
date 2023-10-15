@@ -6,5 +6,5 @@
   ./i18n.nix
   ./mounts.nix
   ./nix.nix
-  # ./user.nix
+  ./user.nix
 ]

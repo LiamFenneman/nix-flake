@@ -1,4 +1,4 @@
-{ pkgs, user, ... }:
+{ ... }:
 
 {
   services.xserver.enable = true;
@@ -7,13 +7,7 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   custom.mounts.enable = true;
-
-  users.users.${user} = {
-    isNormalUser = true;
-    description = "Liam";
-    extraGroups = [ "wheel" ];
-    initialPassword = "changeme";
-  };
+  custom.user.isAdmin = true;
 
   system.stateVersion = "23.05";
 }
