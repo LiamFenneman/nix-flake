@@ -12,5 +12,12 @@
     user.isAdmin = true;
   };
 
+  virtualisation.vmVariant = {
+    virtualisation = {
+      memorySize = 4096;
+      cores = 4;
+    };
+  };
+
   system.stateVersion = "23.05";
 }
