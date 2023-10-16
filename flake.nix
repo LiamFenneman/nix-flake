@@ -34,7 +34,7 @@
     in
     {
       nixosConfigurations = eachSystem [
-        "desktop"
+        "vm"
       ];
     };
 
