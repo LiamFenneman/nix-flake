@@ -38,9 +38,14 @@ in
       };
     })
     (mkIf (cfg.loader == "systemd-boot") {
-      boot.loader.systemd-boot.enable = true;
-      boot.loader.systemd-boot.configurationLimit = cfg.configLimit;
-      boot.loader.efi.canTouchEfiVariables = true;
+      boot.loader.systemd-boot = {
+        configurationLimit = cfg.configLimit;
+        enable = true;
+      };
+      boot.loader.efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
     })
   ];
 }
