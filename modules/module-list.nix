@@ -13,6 +13,11 @@
   ./tmux.nix
   ./user.nix
   ./zsh.nix
+  # Display Manager and related
+  ./display/i3.nix
+  ./display/kde.nix
+  ./display/manager.nix
+  ./display/nvidia.nix
   # Package collections
   ./pkgs/media.nix
   ./pkgs/utils.nix
