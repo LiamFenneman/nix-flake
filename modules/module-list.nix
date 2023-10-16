@@ -1,6 +1,4 @@
 [
-  ./base.nix
-  #
   ./audio.nix
   ./boot.nix
   ./docker.nix
@@ -9,6 +7,7 @@
   ./i18n.nix
   ./input.nix
   ./mounts.nix
+  ./network.nix
   ./nix.nix
   ./ssh.nix
   ./tmux.nix
@@ -16,4 +15,5 @@
   ./zsh.nix
   # Package collections
   ./pkgs/media.nix
+  ./pkgs/utils.nix
 ]

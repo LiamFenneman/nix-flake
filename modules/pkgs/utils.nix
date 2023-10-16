@@ -1,18 +1,16 @@
-{ config, lib, pkgs, hostName, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 
 let
-  cfg = config.custom.base;
+  cfg = config.custom.utils;
 in
 {
-  options.custom.base = {
-    enable = mkEnableOption "base" // { default = true; };
+  options.custom.utils = {
+    enable = mkEnableOption "utils" // { default = true; };
   };
 
   config = mkIf cfg.enable {
-    networking.hostName = hostName;
-
     environment.systemPackages = with pkgs; [
       curl
       fd
