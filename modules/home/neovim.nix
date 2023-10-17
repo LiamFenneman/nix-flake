@@ -3,10 +3,10 @@
 with lib;
 
 let
-  cfg = config.custom.neovim;
+  cfg = config.custom.home.neovim;
 in
 {
-  options.custom.neovim = {
+  options.custom.home.neovim = {
     enable = mkEnableOption "neovim" // { default = true; };
   };
 
@@ -37,4 +37,3 @@ in
     };
   };
 }
-
