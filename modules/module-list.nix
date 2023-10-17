@@ -11,6 +11,7 @@
   ./network.nix
   ./nix.nix
   ./ssh.nix
+  ./thunar.nix
   ./tmux.nix
   ./user.nix
   ./virt.nix
