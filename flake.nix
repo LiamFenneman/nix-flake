@@ -13,7 +13,7 @@
       system = "x86_64-linux";
       user = "liam";
 
-      nixModules = import ./modules/module-list.nix;
+      nixModules = import ./modules/nix/module-list.nix;
       homeModules = import ./modules/home/module-list.nix;
 
       # Create a NixOS system configuration from the given hostname.
