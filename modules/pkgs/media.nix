@@ -42,5 +42,11 @@ in
         onlyoffice-bin
       ])
     ];
+
+    xdg.mime.defaultApplications = {
+      "application/pdf" = mkIf cfg.office "org.gnome.Evince.desktop";
+      "image/png" = mkIf cfg.image "Ristretto.desktop";
+      "image/jpeg" = mkIf cfg.image "Ristretto.desktop";
+    };
   };
 }
