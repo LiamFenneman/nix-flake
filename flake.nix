@@ -3,24 +3,43 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs } @ inputs:
+  outputs = { self, nixpkgs, home-manager } @ inputs:
     let
       system = "x86_64-linux";
       user = "liam";
 
-      customModules = import ./modules/module-list.nix;
+      nixModules = import ./modules/module-list.nix;
+      homeModules = import ./modules/home/module-list.nix;
 
       # Create a NixOS system configuration from the given hostname.
-      mkSystem = host: (nixpkgs.lib.nixosSystem
-        {
-          inherit system;
-          modules = [ ./hosts/${host} ] ++ customModules;
-          specialArgs = let hostName = host; in {
-            inherit inputs system user hostName;
-          };
-        });
+      mkSystem = host: (
+        let hostName = host; in nixpkgs.lib.nixosSystem
+          {
+            inherit system;
+            modules = [
+              ./hosts/${host}
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.${user} = { ... }: {
+                  programs.home-manager.enable = true;
+                  home.stateVersion = "23.05";
+                };
+                home-manager.sharedModules = homeModules;
+                home-manager.extraSpecialArgs = { inherit user hostName; };
+              }
+            ] ++ nixModules;
+            specialArgs = {
+              inherit inputs system user hostName;
+            };
+          }
+      );
 
       # Create a list of NixOS system configurations from a list of hostnames.
       # Each system configuration is imported from the `./hosts/{hostname}
@@ -34,6 +53,8 @@
     in
     {
       nixosConfigurations = eachSystem [
+        "desktop"
+        "laptop"
         "vm"
       ];
     };
