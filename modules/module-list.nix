@@ -13,6 +13,7 @@
   ./ssh.nix
   ./tmux.nix
   ./user.nix
+  ./virt.nix
   ./zsh.nix
   # Display Manager and related
   ./display/i3.nix
