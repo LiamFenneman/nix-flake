@@ -8,7 +8,12 @@
 
   # Configure my custom modules.
   custom = {
-    # docker.enable = true;
+    docker.enable = true;
+    display = {
+      i3.enable = true;
+      manager.enable = true;
+      nvidia.enable = true;
+    };
     input.enable = true;
     mounts.enable = true;
     user.isAdmin = true;
