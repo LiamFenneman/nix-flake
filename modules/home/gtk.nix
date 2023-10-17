@@ -14,6 +14,7 @@ in
     home.packages = with pkgs; [
       gnome.gnome-themes-extra
       gtk-engine-murrine
+      dconf
     ];
 
     gtk = {
