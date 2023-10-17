@@ -6,17 +6,8 @@
 
   # Configure my custom modules.
   custom = {
-    # display = {
-    #   i3.enable = true;
-    #   kde.enable = true;
-    #   manager.enable = true;
-    # };
-
-    # docker.enable = true;
     input.enable = true;
     mounts.enable = true;
-    # thunar.enable = true;
-    # virt.enable = true;
 
     user.isAdmin = true;
   };

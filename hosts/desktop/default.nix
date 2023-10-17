@@ -17,6 +17,7 @@
     docker.enable = true;
     input.enable = true;
     mounts.enable = true;
+    polkit.enable = true;
     thunar.enable = true;
     virt.enable = true;
 

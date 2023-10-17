@@ -10,6 +10,7 @@
   ./mounts.nix
   ./network.nix
   ./nix.nix
+  ./polkit.nix
   ./ssh.nix
   ./thunar.nix
   ./tmux.nix
