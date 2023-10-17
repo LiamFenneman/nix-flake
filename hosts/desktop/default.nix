@@ -18,6 +18,7 @@
     input.enable = true;
     mounts.enable = true;
     polkit.enable = true;
+    steam.enable = true;
     thunar.enable = true;
     virt.enable = true;
 

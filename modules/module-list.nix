@@ -12,6 +12,7 @@
   ./nix.nix
   ./polkit.nix
   ./ssh.nix
+  ./steam.nix
   ./thunar.nix
   ./tmux.nix
   ./user.nix
