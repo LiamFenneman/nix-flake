@@ -1,7 +1,7 @@
 [
   ./audio.nix
   ./boot.nix
-  ./chromium.nix
+  ./browser.nix
   ./docker.nix
   ./fonts.nix
   ./git.nix

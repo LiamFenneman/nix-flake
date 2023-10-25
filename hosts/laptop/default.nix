@@ -10,6 +10,8 @@
 
   # Configure my custom modules.
   custom = {
+    browser.librewolf = true;
+
     docker.enable = true;
     input.enable = true;
     mounts.enable = true;

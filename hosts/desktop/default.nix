@@ -14,6 +14,9 @@
       nvidia.enable = true;
     };
 
+    browser.librewolf = true;
+    browser.chromium = true;
+
     docker.enable = true;
     input.enable = true;
     mounts.enable = true;
