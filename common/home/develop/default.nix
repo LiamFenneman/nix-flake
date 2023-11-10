@@ -17,6 +17,7 @@ in
   ];
 
   home.packages = with pkgs; [
+    vscode
     clang-tools_16
     clang
     gnumake

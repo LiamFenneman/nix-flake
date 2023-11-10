@@ -12,5 +12,7 @@
 
   environment.systemPackages = with pkgs; [
     protonup-qt
+    minecraft
+    prismlauncher
   ];
 }

@@ -116,10 +116,14 @@ in
   services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [
+    libsForQt5.kdenlive
+    librewolf
+    obs-studio
     git
     vim
     wget
     nfs-utils
+    ciscoPacketTracer8
   ];
 
   fonts.packages = with pkgs; [

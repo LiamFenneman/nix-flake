@@ -45,6 +45,7 @@
       gd = "git diff";
       gdc = "git diff --cached";
       gl = "git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches";
+      wt = "git worktree ";
 
       u = "cd ~/Documents/University";
       p = "cd ~/Documents/Projects";

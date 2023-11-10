@@ -10,5 +10,8 @@
         defaultBranch = "main";
       };
     };
+    lfs = {
+      enable = true;
+    };
   };
 }
