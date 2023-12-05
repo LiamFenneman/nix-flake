@@ -146,6 +146,11 @@ in
     enableSSHSupport = true;
   };
 
+  services.deluge = {
+    enable = true;
+    web.enable = true;
+  };
+
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
