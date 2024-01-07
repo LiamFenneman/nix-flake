@@ -124,6 +124,7 @@ in
     wget
     nfs-utils
     ciscoPacketTracer8
+    brave
   ];
 
   fonts.packages = with pkgs; [
