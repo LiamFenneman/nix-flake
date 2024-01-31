@@ -44,7 +44,8 @@ in
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;
   networking.hosts = {
-    "192.168.1.20" = [ "fileserver" ];
+    "192.168.254.200" = [ "pve1" ];
+    "192.168.254.201" = [ "pve2" ];
   };
 
   services.rpcbind.enable = true;
@@ -125,6 +126,10 @@ in
     nfs-utils
     ciscoPacketTracer8
     brave
+    ansible
+    ansible-lint
+    sshpass
+    yamlfmt
   ];
 
   fonts.packages = with pkgs; [
