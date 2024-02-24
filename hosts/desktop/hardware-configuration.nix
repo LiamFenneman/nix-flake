@@ -17,7 +17,7 @@
     "nfsv4"
   ];
   boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm" "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {

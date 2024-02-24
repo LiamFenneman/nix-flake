@@ -5,6 +5,7 @@
     enable = true;
     extraConfig = ''
       AddKeysToAgent yes
+      StrictHostKeyChecking no
     '';
     matchBlocks = {
       "github.com" = {

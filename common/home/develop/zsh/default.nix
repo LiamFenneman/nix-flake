@@ -51,6 +51,8 @@
       p = "cd ~/Documents/Projects";
       n = "cd ~/Documents/Notes";
 
+      k = "kubectl";
+
       wp = "\\ls $WALLPAPER_DIR | fzf --preview=\"feh --bg-scale $WALLPAPER_DIR/{}\" | xargs -I {} feh --bg-scale $WALLPAPER_DIR/{}";
 
       feh = "feh --scale-down --image-bg black ";

@@ -126,10 +126,15 @@ in
     nfs-utils
     ciscoPacketTracer8
     brave
+    kubectl
+    kubernetes-helm
+    k3sup
     ansible
     ansible-lint
     sshpass
+    python311Packages.netaddr
     yamlfmt
+    openssl
   ];
 
   fonts.packages = with pkgs; [
