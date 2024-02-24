@@ -135,6 +135,9 @@ in
     python311Packages.netaddr
     yamlfmt
     openssl
+    wezterm
+    lua-language-server
+    stylua
   ];
 
   fonts.packages = with pkgs; [
