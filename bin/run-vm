@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+find ./result/bin -name 'run-*-vm' -exec {} \;
