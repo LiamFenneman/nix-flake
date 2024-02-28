@@ -1,14 +1,15 @@
 { user, mod, lib, ... }: {
   imports = [
     (mod "base.nix")
-    (mod "pkgs.nix")
-    (mod "security")
-    # (mod "boot.nix")
-    (mod "display")
+    # (mod "boot/grub.nix")
+
+    (mod "pkgs")
+    # (mod "gaming")
     (mod "develop")
-    (mod "network.nix")
-    (mod "virtualisation.nix")
-    (mod "thunar.nix")
+    (mod "display")
+    (mod "network")
+    (mod "security")
+    (mod "virtualisation")
   ];
 
   boot.loader.systemd-boot.enable = true;

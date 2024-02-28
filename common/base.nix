@@ -19,6 +19,11 @@
 
   services.printing.enable = true;
 
+  qt = {
+    enable = true;
+    style = "adwaita-dark";
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   nix = {

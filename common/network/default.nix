@@ -1,4 +1,4 @@
-{ hostname, ... }:
+{ user, hostname, ... }:
 {
   networking = {
     hostName = hostname;
@@ -11,6 +11,8 @@
       "192.168.254.101"
     ];
   };
+
+  users.users.${user}.extraGroups = [ "networkmanager" ];
 
   programs.nm-applet.enable = true;
 }
