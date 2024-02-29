@@ -37,6 +37,8 @@
                              --marker ⇒"
 
       export WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+
+      eval "$(zoxide init zsh)"
     '';
     ohMyZsh = {
       enable = true;

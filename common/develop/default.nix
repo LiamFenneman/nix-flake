@@ -28,6 +28,7 @@
 
     # Other
     gnumake
+    zoxide
   ];
 
   programs.direnv = {
