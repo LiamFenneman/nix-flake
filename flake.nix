@@ -21,12 +21,19 @@
           specialArgs = { inherit inputs user system hostname; };
           specialArgs.mod = name: ./. + "/common/${name}";
         });
+
+      mkEachSystem = hosts: builtins.listToAttrs (builtins.map
+        (hostname: {
+          name = hostname;
+          value = mkSystem hostname;
+        })
+        hosts);
     in
     {
-      nixosConfigurations = {
-        # "desktop" = mkSystem "desktop";
-        "vm" = mkSystem "vm";
-      };
+      nixosConfigurations = mkEachSystem [
+        "vm"
+        "desktop"
+      ];
 
       devShells.${system} = with pkgs; {
         default = mkShell {

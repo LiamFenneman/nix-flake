@@ -1,5 +1,6 @@
 { user, pkgs, ... }: {
   imports = [
+    ./scripts.nix
     ./ssh.nix
     ./zsh.nix
   ];

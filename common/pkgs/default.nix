@@ -5,14 +5,13 @@
 
   # Common user-specific packages to always include
   users.users.${user}.packages = with pkgs; [
-    stow
-
     # Browsers
     brave
     chromium
 
     # Audio
     easyeffects
+    pavucontrol
 
     # Video
     vlc
@@ -29,6 +28,7 @@
     # Other
     featherpad
     qalculate-gtk
+    stow
   ];
 
   # Common system packages to always include

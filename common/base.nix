@@ -1,10 +1,16 @@
-{ ... }: {
+{ user, ... }: {
   time.timeZone = "Pacific/Auckland";
   i18n.defaultLocale = "en_NZ.UTF-8";
 
   services.xserver = {
     layout = "us";
     xkbVariant = "";
+  };
+
+  users.users.${user} = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    initialPassword = "test";
   };
 
   sound.enable = true;
