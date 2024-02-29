@@ -4,6 +4,7 @@
 
     (mod "base.nix")
     (mod "boot/grub.nix")
+    (mod "display/nvidia.nix")
 
     (mod "pkgs")
     (mod "gaming")
