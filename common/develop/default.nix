@@ -28,6 +28,7 @@
 
     # Other
     gnumake
+    nodejs
     zoxide
   ];
 
