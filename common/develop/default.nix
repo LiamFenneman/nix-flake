@@ -27,6 +27,7 @@
     yamlfmt
 
     # Other
+    clang
     gnumake
     nodejs
     zoxide
