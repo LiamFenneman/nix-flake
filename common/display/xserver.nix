@@ -10,6 +10,7 @@
       lightdm.enable = true;
       lightdm.greeter.enable = true;
     };
+    libinput.enable = true;
   };
 
   services.getty.autologinUser = "liam";
