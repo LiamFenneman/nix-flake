@@ -26,11 +26,14 @@
     # YAML
     yamlfmt
 
-    # Other
+    # Other Tools
     clang
     gnumake
     nodejs
     zoxide
+
+    # IDEs
+    jetbrains.datagrip
   ];
 
   programs.direnv = {
