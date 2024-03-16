@@ -1,4 +1,4 @@
-{ user, pkgs, ... }: {
+{ inputs, user, pkgs, system, ... }: {
   imports = [
     ./scripts.nix
     ./ssh.nix
@@ -15,6 +15,11 @@
     kitty
     wezterm
 
+    # K8s
+    k3sup
+    kubectl
+    kubernetes-helm
+
     # Nix
     nixpkgs-fmt
     nil
@@ -26,10 +31,14 @@
     # YAML
     yamlfmt
 
+    # WGSL
+    inputs.wgsl-analyzer.packages.${system}.default
+
     # Other Tools
     clang
     gnumake
     nodejs
+    wasmtime
     zoxide
 
     # IDEs
