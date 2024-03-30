@@ -79,7 +79,7 @@
     escapeTime = 100;
     keyMode = "vi";
     shortcut = "a";
-    terminal = "tmux-256color";
+    terminal = "screen-256color";
     extraConfig = ''
       set -g mouse on
       setw -g xterm-keys on
@@ -92,7 +92,7 @@
       bind '"' split-window -c "#{pane_current_path}"
       bind % split-window -hc "#{pane_current_path}"
 
-      set-option -sa terminal-features ',xterm-kitty:RGB'
+      set-option -sa terminal-features ',xterm-256color:RGB'
     '';
   };
 }
