@@ -35,7 +35,9 @@
     inputs.wgsl-analyzer.packages.${system}.default
 
     # Other Tools
+    ansible
     clang
+    cloc
     gnumake
     nodejs
     wasmtime

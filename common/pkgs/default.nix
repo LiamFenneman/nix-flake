@@ -34,6 +34,7 @@
   # Common system packages to always include
   environment.systemPackages = with pkgs; [
     curl
+    dig
     eza
     fd
     feh
