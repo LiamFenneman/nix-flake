@@ -19,6 +19,7 @@
     k3sup
     kubectl
     kubernetes-helm
+    minikube
 
     # Nix
     nixpkgs-fmt

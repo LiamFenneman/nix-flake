@@ -11,7 +11,7 @@
 
   users.users.${user}.packages = with pkgs; [
     protonup-qt
-    minecraft
-    prismlauncher
+    # minecraft
+    # prismlauncher
   ];
 }

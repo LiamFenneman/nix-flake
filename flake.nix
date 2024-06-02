@@ -4,7 +4,7 @@
   nixConfig = { experimental-features = [ "nix-command" "flakes" ]; };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +36,7 @@
     in
     {
       nixosConfigurations = mkEachSystem [
-        "vm"
+        # "vm"
         "desktop"
       ];
 

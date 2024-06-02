@@ -15,7 +15,7 @@
     (mod "virtualisation")
   ];
 
-  services.xserver.libinput.mouse.accelSpeed = "-0.3";
+  services.libinput.mouse.accelSpeed = "-0.3";
 
   system.stateVersion = "23.11";
 }
