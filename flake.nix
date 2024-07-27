@@ -5,6 +5,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,17 +14,18 @@
     wgsl-analyzer.url = "github:wgsl-analyzer/wgsl-analyzer";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixos-generators, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-generators, ... }:
     let
       user = "liam";
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
+      pkgs-unstable = import nixpkgs-unstable { inherit system; };
 
       mkSystem = hostname:
         (nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ ./hosts/${hostname} ];
-          specialArgs = { inherit inputs user system hostname; };
+          specialArgs = { inherit inputs pkgs-unstable user system hostname; };
           specialArgs.mod = name: ./. + "/common/${name}";
         });
 

@@ -1,4 +1,4 @@
-{ inputs, user, pkgs, system, ... }: {
+{ inputs, user, pkgs, pkgs-unstable, system, ... }: {
   imports = [
     ./scripts.nix
     ./ssh.nix
@@ -21,6 +21,10 @@
     kubernetes-helm
     minikube
 
+    # Rust
+    cargo-audit
+    cargo-outdated
+
     # Nix
     nixpkgs-fmt
     nil
@@ -28,6 +32,11 @@
     # Lua
     lua-language-server
     stylua
+
+    # Gleam/Erlang
+    pkgs-unstable.gleam
+    erlang
+    rebar3
 
     # YAML
     yamlfmt
@@ -41,6 +50,7 @@
     cloc
     gnumake
     nodejs
+    tokei
     wasmtime
     zoxide
 
