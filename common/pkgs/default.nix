@@ -27,12 +27,16 @@
 
     # Other
     featherpad
+    filelight
     qalculate-gtk
     stow
+    tldr
+    transmission-qt
   ];
 
   # Common system packages to always include
   environment.systemPackages = with pkgs; [
+    btop
     curl
     dig
     eza
@@ -46,6 +50,7 @@
     gnutar
     htop
     inetutils
+    kdePackages.spectacle
     libva-utils
     p7zip
     pciutils

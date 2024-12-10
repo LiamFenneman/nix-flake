@@ -7,9 +7,10 @@
     (mod "display/nvidia.nix")
 
     (mod "pkgs")
-    (mod "gaming")
     (mod "develop")
     (mod "display")
+    (mod "gaming")
+    (mod "media")
     (mod "network")
     (mod "security")
     (mod "virtualisation")

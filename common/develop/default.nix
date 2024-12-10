@@ -16,10 +16,8 @@
     wezterm
 
     # K8s
-    k3sup
     kubectl
-    kubernetes-helm
-    minikube
+    talosctl
 
     # Rust
     cargo-audit
@@ -49,9 +47,12 @@
     clang
     cloc
     gnumake
+    jq
     nodejs
+    postgresql_16
     tokei
     wasmtime
+    wrk
     zoxide
 
     # IDEs

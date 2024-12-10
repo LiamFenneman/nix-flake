@@ -10,7 +10,7 @@
       VendorName "NVIDIA Corporation"
     '';
     screenSection = ''
-      Option "metamodes" "DP-2: 1920x1080_144 +1920+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, DP-0: 1920x1080_60 +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
+      Option "metamodes" "DP-0: 1920x1080_60 +0+360 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, DP-2: 2560x1440_180 +1920+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
     '';
     exportConfiguration = true;
     videoDrivers = [ "nvidia" ];

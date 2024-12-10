@@ -15,4 +15,9 @@
   users.users.${user}.extraGroups = [ "networkmanager" ];
 
   programs.nm-applet.enable = true;
+
+  services.tailscale = {
+    enable = true;
+    # authKeyFile
+  };
 }
