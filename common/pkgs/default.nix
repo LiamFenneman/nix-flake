@@ -31,7 +31,7 @@
     qalculate-gtk
     stow
     tldr
-    transmission-qt
+    transmission_4-qt
   ];
 
   # Common system packages to always include

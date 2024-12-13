@@ -18,6 +18,6 @@
 
   services.tailscale = {
     enable = true;
-    # authKeyFile
+    extraUpFlags = [ "--accept-routes" ];
   };
 }
