@@ -45,6 +45,7 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     lmodern
   ];
+  fonts.fontDir.enable = true;
 
   security.sudo = {
     enable = true;
@@ -89,9 +90,8 @@
           type = "indirect";
         };
         to = {
-          owner = "LiamFenneman";
-          repo = "nix-flake-templates";
-          type = "github";
+          type = "git";
+          url = "git@ssh.git.local.liamfenneman.dev:liam/nix-templates.git";
         };
       };
     };

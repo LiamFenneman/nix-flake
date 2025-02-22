@@ -11,7 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    wgsl-analyzer.url = "github:wgsl-analyzer/wgsl-analyzer";
+    # wgsl-analyzer.url = "github:wgsl-analyzer/wgsl-analyzer";
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-generators, ... }:

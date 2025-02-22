@@ -22,6 +22,7 @@
     # Rust
     cargo-audit
     cargo-outdated
+    bacon
 
     # Nix
     nixpkgs-fmt
@@ -40,7 +41,7 @@
     yamlfmt
 
     # WGSL
-    inputs.wgsl-analyzer.packages.${system}.default
+    # inputs.wgsl-analyzer.packages.${system}.default
 
     # Other Tools
     ansible

@@ -1,12 +1,12 @@
 { user, pkgs, ... }: {
   imports = [
+    ./firefox.nix
     ./thunar.nix
   ];
 
   # Common user-specific packages to always include
   users.users.${user}.packages = with pkgs; [
     # Browsers
-    brave
     chromium
 
     # Audio
@@ -50,8 +50,8 @@
     gnutar
     htop
     inetutils
-    kdePackages.spectacle
     libva-utils
+    nfs-utils
     p7zip
     pciutils
     ripgrep
