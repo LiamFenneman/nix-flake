@@ -1,6 +1,6 @@
 { user, pkgs, ... }: {
   imports = [
-    ./firefox.nix
+    # ./firefox.nix
     ./thunar.nix
   ];
 
@@ -8,6 +8,7 @@
   users.users.${user}.packages = with pkgs; [
     # Browsers
     chromium
+    librewolf
 
     # Audio
     easyeffects
@@ -52,8 +53,10 @@
     inetutils
     libva-utils
     nfs-utils
+    nmap
     p7zip
     pciutils
+    qdirstat
     ripgrep
     tree
     unzip

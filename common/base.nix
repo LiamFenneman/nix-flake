@@ -24,6 +24,10 @@
 
   services.printing.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    capitaine-cursors
+  ];
+
   environment.sessionVariables = rec {
     XDG_CACHE_HOME = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";

@@ -12,6 +12,7 @@
     };
 
     # wgsl-analyzer.url = "github:wgsl-analyzer/wgsl-analyzer";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-generators, ... }:
@@ -24,7 +25,14 @@
       mkSystem = hostname:
         (nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/${hostname} ];
+          modules = [
+            ./hosts/${hostname}
+            {
+              nixpkgs.overlays = [
+                # inputs.neovim-nightly-overlay.overlays.default
+              ];
+            }
+          ];
           specialArgs = { inherit inputs pkgs-unstable user system hostname; };
           specialArgs.mod = name: ./. + "/common/${name}";
         });

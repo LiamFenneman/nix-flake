@@ -27,15 +27,15 @@
     fsType = "vfat";
   };
 
-  fileSystems."/nfs/general1" = {
-    device = "nas:/mnt/pool1/general1";
-    fsType = "nfs";
-  };
-
-  fileSystems."/nfs/media" = {
-    device = "nas:/mnt/pool1/general2/media";
-    fsType = "nfs";
-  };
+  # fileSystems."/nfs/general1" = {
+  #   device = "nas:/mnt/pool1/general1";
+  #   fsType = "nfs";
+  # };
+  #
+  # fileSystems."/nfs/media" = {
+  #   device = "nas:/mnt/pool1/general2/media";
+  #   fsType = "nfs";
+  # };
 
   swapDevices = [{ device = "/dev/disk/by-uuid/8a959f53-61ae-4ecc-93fc-4ef4e5b4b0df"; }];
 

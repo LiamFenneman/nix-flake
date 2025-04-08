@@ -1,23 +1,17 @@
-{ inputs, user, pkgs, pkgs-unstable, system, ... }: {
+{ user, pkgs, pkgs-unstable, ... }: {
   imports = [
     ./scripts.nix
     ./ssh.nix
     ./zsh.nix
   ];
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
   users.users.${user}.packages = with pkgs; [
-    # Terminal emulators
-    kitty
+    pkgs-unstable.neovim-unwrapped
     wezterm
 
     # K8s
     kubectl
-    talosctl
+    # talosctl
 
     # Rust
     cargo-audit
@@ -30,7 +24,11 @@
 
     # Lua
     lua-language-server
-    stylua
+    pkgs-unstable.stylua
+
+    # Web
+    typescript-language-server
+    biome
 
     # Gleam/Erlang
     pkgs-unstable.gleam
@@ -47,11 +45,14 @@
     ansible
     clang
     cloc
+    gdb
+    gf
     gnumake
     jq
     nodejs
     postgresql_16
     tokei
+    valgrind
     wasmtime
     wrk
     zoxide
@@ -70,12 +71,36 @@
     config = {
       commit = {
         gpgSign = true;
+        verbose = true;
       };
-      tag = {
-        gpgSign = true;
+      core = {
+        excludesfile = "~/.gitignore";
+      };
+      diff = {
+        algorithm = "histogram";
+        colorMoved = "plain";
+        mnemonicPrefix = true;
+        renames = true;
+      };
+      fetch = {
+        all = true;
+        prune = true;
+        pruneTags = true;
+      };
+      help = {
+        autocorrect = "prompt";
       };
       init = {
         defaultBranch = "main";
+      };
+      push = {
+        autoSetupRemote = true;
+        default = "simple";
+        followTags = true;
+      };
+      tag = {
+        gpgSign = true;
+        sort = "version:refname";
       };
       user = {
         email = "liamfennemanbusiness@gmail.com";
