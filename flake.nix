@@ -46,7 +46,6 @@
     in
     {
       nixosConfigurations = mkEachSystem [
-        # "vm"
         "desktop"
       ];
 

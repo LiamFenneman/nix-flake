@@ -13,7 +13,6 @@
     (mod "media")
     (mod "network")
     (mod "security")
-    # (mod "storage")
     (mod "virtualisation")
   ];
 

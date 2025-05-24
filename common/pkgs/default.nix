@@ -1,6 +1,5 @@
 { user, pkgs, ... }: {
   imports = [
-    # ./firefox.nix
     ./thunar.nix
   ];
 
@@ -21,6 +20,7 @@
     aseprite
     flameshot
     gimp
+    # gimp3
     xfce.ristretto
 
     # PDF Viewer
@@ -31,12 +31,13 @@
     filelight
     qalculate-gtk
     stow
-    tldr
+    tlrc
     transmission_4-qt
   ];
 
   # Common system packages to always include
   environment.systemPackages = with pkgs; [
+    bc
     btop
     curl
     dig
