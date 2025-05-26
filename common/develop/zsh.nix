@@ -20,10 +20,7 @@
       gl = "git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches";
 
       c = "cargo";
-
       k = "kubectl";
-
-      wp = "\\ls $WALLPAPER_DIR | fzf --preview=\"feh --bg-scale $WALLPAPER_DIR/{}\" | xargs -I {} feh --bg-scale $WALLPAPER_DIR/{}";
     };
     ohMyZsh = {
       enable = true;

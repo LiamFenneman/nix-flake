@@ -13,7 +13,7 @@
     initialPassword = "test";
   };
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -46,8 +46,7 @@
   };
 
   fonts.packages = with pkgs; [
-    # nerd-fonts.jetbrains-mono
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
     lmodern
   ];
   fonts.fontDir.enable = true;

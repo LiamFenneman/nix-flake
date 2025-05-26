@@ -18,9 +18,8 @@
 
     # Images
     aseprite
-    flameshot
-    gimp
-    # gimp3
+    kdePackages.spectacle
+    gimp3
     xfce.ristretto
 
     # PDF Viewer
@@ -28,7 +27,6 @@
 
     # Other
     featherpad
-    filelight
     qalculate-gtk
     stow
     tlrc

@@ -7,7 +7,7 @@
   ];
 
   users.users.${user}.packages = with pkgs; [
-    pkgs-unstable.neovim-unwrapped
+    neovim-unwrapped
     wezterm
 
     # K8s
@@ -24,7 +24,7 @@
 
     # Lua
     lua-language-server
-    pkgs-unstable.stylua
+    stylua
 
     # Web
     typescript-language-server

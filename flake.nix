@@ -4,7 +4,7 @@
   nixConfig = { experimental-features = [ "nix-command" "flakes" ]; };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
@@ -49,27 +49,14 @@
         "desktop"
       ];
 
-      devShells.${system} = with pkgs;
-        let
-          build-vm = pkgs.writeShellScriptBin "build-vm" ''
-            nixos-rebuild build-vm --flake $1 .#vm
-          '';
-
-          run-vm = pkgs.writeShellScriptBin "run-vm" ''
-            find ./result/bin -name 'run-*-vm' -exec {} \;
-          '';
-        in
-        {
-          default = mkShell {
-            nativeBuildInputs = with pkgs; [
-              build-vm
-              run-vm
-
-              nixpkgs-fmt
-              nil
-            ];
-            buildInputs = [ ];
-          };
+      devShells.${system} = {
+        default = pkgs.mkShell {
+          nativeBuildInputs = with pkgs; [
+            nixpkgs-fmt
+            nil
+          ];
+          buildInputs = [ ];
         };
+      };
     };
 }
