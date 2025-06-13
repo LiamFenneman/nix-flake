@@ -12,6 +12,7 @@
 
     # K8s
     kubectl
+    talosctl
 
     # Rust
     cargo-audit
