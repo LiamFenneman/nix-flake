@@ -14,5 +14,6 @@
   users.users.${user}.packages = with pkgs; [
     protonup-qt
     pcsx2
+    rpcs3
   ];
 }

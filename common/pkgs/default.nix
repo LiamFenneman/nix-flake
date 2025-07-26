@@ -31,6 +31,7 @@
     stow
     tlrc
     transmission_4-qt
+    kdePackages.kdeconnect-kde
   ];
 
   # Common system packages to always include

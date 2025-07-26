@@ -14,6 +14,8 @@
     (mod "network")
     (mod "security")
     (mod "virtualisation")
+
+    (mod "network/kde-connect.nix")
   ];
 
   services.libinput.mouse.accelSpeed = "-0.3";

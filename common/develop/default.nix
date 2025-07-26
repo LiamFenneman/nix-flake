@@ -7,17 +7,18 @@
   ];
 
   users.users.${user}.packages = with pkgs; [
-    neovim-unwrapped
+    # neovim-unwrapped
+    neovim
     wezterm
 
     # K8s
     kubectl
-    talosctl
 
     # Rust
     cargo-audit
     cargo-outdated
     bacon
+    pkgs-unstable.wgsl-analyzer
 
     # Nix
     nixpkgs-fmt
@@ -35,7 +36,6 @@
     yamlfmt
 
     # Other Tools
-    ansible
     clang
     gdb
     gf
@@ -44,7 +44,6 @@
     postgresql_16
     tokei
     valgrind
-    wasmtime
     wrk
     zoxide
 

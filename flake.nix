@@ -12,7 +12,7 @@
     };
 
     # wgsl-analyzer.url = "github:wgsl-analyzer/wgsl-analyzer";
-    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-generators, ... }:
@@ -29,7 +29,7 @@
             ./hosts/${hostname}
             {
               nixpkgs.overlays = [
-                # inputs.neovim-nightly-overlay.overlays.default
+                inputs.neovim-nightly-overlay.overlays.default
               ];
             }
           ];
