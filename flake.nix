@@ -47,6 +47,7 @@
     {
       nixosConfigurations = mkEachSystem [
         "desktop"
+	"persephone"
       ];
 
       devShells.${system} = {

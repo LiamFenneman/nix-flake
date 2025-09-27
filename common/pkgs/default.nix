@@ -17,8 +17,7 @@
     vlc
 
     # Images
-    aseprite
-    kdePackages.spectacle
+    #aseprite
     gimp3
     xfce.ristretto
 
@@ -31,7 +30,7 @@
     stow
     tlrc
     transmission_4-qt
-    kdePackages.kdeconnect-kde
+    #kdePackages.kdeconnect-kde
   ];
 
   # Common system packages to always include
@@ -58,6 +57,7 @@
     pciutils
     qdirstat
     ripgrep
+    screen
     tree
     unzip
     vim
