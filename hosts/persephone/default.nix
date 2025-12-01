@@ -6,6 +6,7 @@
     (mod "boot/grub.nix")
     (mod "display/nvidia.nix")
 
+    (mod "ai")
     (mod "pkgs")
     (mod "develop")
     (mod "display")

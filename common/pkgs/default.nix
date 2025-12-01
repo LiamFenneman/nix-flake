@@ -30,6 +30,7 @@
     stow
     tlrc
     transmission_4-qt
+    flameshot
     #kdePackages.kdeconnect-kde
   ];
 

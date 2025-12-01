@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  browser = "librewolf.desktop";
+in
+{
   # NOTE: see https://github.com/NixOS/nixpkgs/issues/248192
   nixpkgs.overlays = [
     (self: super: {
@@ -33,5 +37,14 @@
     xarchiver
   ];
 
-  xdg.mime.defaultApplications."inode/directory" = "Thunar.desktop";
+  xdg.mime.defaultApplications = {
+    "inode/directory" = "Thunar.desktop";
+    "default-web-browser" = "${browser}";
+    "text/html" = "${browser}";
+    "application/pdf" = "${browser}";
+    "x-scheme-handler/http" = "${browser}";
+    "x-scheme-handler/https " = "${browser}";
+    "x-scheme-handler/mailto" = "${browser}";
+  };
 }
+

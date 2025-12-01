@@ -20,7 +20,7 @@
       user = "liam";
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-      pkgs-unstable = import nixpkgs-unstable { inherit system; };
+      pkgs-unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
 
       mkSystem = hostname:
         (nixpkgs.lib.nixosSystem {
@@ -47,7 +47,7 @@
     {
       nixosConfigurations = mkEachSystem [
         "desktop"
-	"persephone"
+        "persephone"
       ];
 
       devShells.${system} = {

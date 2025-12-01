@@ -41,6 +41,7 @@
     gf
     gnumake
     jq
+    jujutsu
     postgresql_16
     tokei
     valgrind
@@ -49,6 +50,7 @@
 
     # IDEs
     jetbrains.datagrip
+    jetbrains.rust-rover
   ];
 
   programs.direnv = {
